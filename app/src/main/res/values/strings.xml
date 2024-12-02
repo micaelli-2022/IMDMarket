@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">IMDMarket</string>
+    <string name="opção">O que deseja fazer?</string>
+    <string name="cadastro">Cadastrar\nproduto</string>
+    <string name="listar">Listar\nproduto</string>
+    <string name="alterar">Alterar\nproduto</string>
+    <string name="deletar">Deletar\nproduto</string>
+    <string name="app_login">Login:</string>
+    <string name="app_senha">Senha:</string>
+    <string name="app_entrar">Entrar</string>
+    <string name="Topo_cadastro">CADASTRAR PRODUTO</string>
+    <string name="botão_salvar">Salvar</string>
+    <string name="botão_limpar">Limpar</string>
+    <string name="Topo_alterar">ALTERAR PRODUTO</string>
+    <string name="botão_alterar">Alterar</string>
+    <string name="botão_limpar2">Limpar</string>
+    <string name="Topo_deletar">DELETAR PRODUTO</string>
+    <string name="botão_deletar">Deletar</string>
+    <string name="botão_limpar3">Limpar</string>
+    <string name="Topo_listar">LISTA DE PRODUTO</string>
+    <string name="botão_voltar">Voltar</string>
+</resources>
