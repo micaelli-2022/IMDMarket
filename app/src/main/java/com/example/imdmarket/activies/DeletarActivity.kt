@@ -11,6 +11,7 @@ import com.example.imdmarket.MainActivity
 import com.example.imdmarket.R
 import com.example.imdmarket.databinding.ActivityAlterarBinding
 import com.example.imdmarket.databinding.ActivityDeletarBinding
+import com.example.imdmarket.model.ProdutoGlobal
 
 class DeletarActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDeletarBinding
@@ -26,9 +27,34 @@ class DeletarActivity : AppCompatActivity() {
 
         binding.btdeletar.setOnClickListener {
 
-            Toast.makeText(this, "Produto deletado com sucesso", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, MainActivity::class.java))
+            val codigo = binding.edCodigo.text.toString()
+            val remover_produto = ProdutoGlobal.listaProdutos.removeIf { it.codigo_produto == codigo }
+
+                if (remover_produto) {
+                    ProdutoGlobal.salvarProdutos(this)
+                    Toast.makeText(this, "Produto deletado com sucesso", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, MainActivity::class.java))
+                } else {
+                    Toast.makeText(this, "Produto não encontrado.", Toast.LENGTH_SHORT).show()
+                }
+
+
         }
 
+
+        binding.btlimpar3.setOnClickListener {
+
+            limparCampos()
+            Toast.makeText(this, "Campos limpos!", Toast.LENGTH_SHORT).show()
+
+        }
+
+
+
     }
+
+        private fun limparCampos(){
+            binding.edCodigo.text.clear()
+
+        }
 }

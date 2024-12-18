@@ -1,5 +1,6 @@
 package com.example.imdmarket
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -22,6 +23,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // val textoRecuperado1 = recuperarDados(this, "campo1")
+        // val textoRecuperado2 = recuperarDados(this, "campo2")
+
        binding.btcadastro.setOnClickListener {
 
            startActivity(Intent(this, CadastrarActivity::class.java))
@@ -42,5 +46,11 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(Intent(this, DeletarActivity::class.java))
         }
+    }
+
+    fun recuperarDados(context: Context, key: String): String {
+        val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        val texto = sharedPreferences.getString(key, null)
+        return texto ?: ""
     }
 }
